@@ -7,17 +7,22 @@ import mine from '@/components/mine'
 Vue.use(Router)
 
 export default new Router({
+    mode: 'history', // 路由模式
     routes: [{
-        path: '/',
-        name: 'index',
-        component: index
+        path: '*', // 重定向到首页
+        redirect: '/index'
+    }, {
+        path: '/index',
+        name: "index",
+        component: index,
+        alias: "/home" // 别名
     }, {
         path: '/search',
-        name: 'search',
+        name: "search",
         component: search
     }, {
         path: '/mine',
-        name: 'mine',
+        name: "mine",
         component: mine
     }]
 })

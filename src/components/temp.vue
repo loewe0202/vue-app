@@ -1,12 +1,10 @@
 <template>
-  <div>
-  </div>
+    <div>
+    </div>
 </template>
 <script>
-import { mapState, mapGetters, mapActions, mapMutations } from 'vuex';
-export default {
-
-}
+import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
+export default {};
 
 </script>
 <style scoped>
