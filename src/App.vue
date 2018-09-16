@@ -3,7 +3,9 @@
         <div class="flex-row-center fixed-bottom tabBar">
             <router-link v-for="item in tabBar" :to="item.path" :key="this" tag="div">{{item.text}}</router-link>
         </div>
-        <router-view class="page"></router-view>
+        <transition :name="transitionName" mode="out-in">
+            <router-view class="page"></router-view>
+        </transition>
     </div>
 </template>
 <script>
@@ -12,16 +14,25 @@ export default {
     name: "App",
     data() {
         return {
+            transitionName: 'slide-left',
             tabBar: [{
-                path: "index",
+                path: "/index",
                 text: '首页'
             }, {
-                path: "search",
+                path: "/search",
                 text: '发现'
             }, {
-                path: "mine",
+                path: "/settings",
                 text: '我的'
             }]
+        }
+    },
+    // dynamically set transition based on route change
+    watch: {
+        '$route' (to, from) {
+            const toDepth = to.path.split('/').length
+            const fromDepth = from.path.split('/').length
+            this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
         }
     }
 };

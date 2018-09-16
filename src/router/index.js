@@ -3,6 +3,10 @@ import Router from 'vue-router'
 import index from '@/components/index'
 import search from '@/components/search'
 import mine from '@/components/mine'
+import UserSettings from "@/components/userSettings"
+import UserEmailsSubscriptions from "@/views/userEmailsSubscriptions"
+import UserProfile from "@/views/userProfile"
+import UserProfilePreview from "@/views/userProfilePreview"
 
 Vue.use(Router)
 
@@ -24,5 +28,22 @@ export default new Router({
         path: '/mine',
         name: "mine",
         component: mine
+    }, {
+        path: '/settings',
+        component: UserSettings,
+        // props: (route) => ({ // 将参数q以query传递给组件
+        //     query: route.query.q
+        // }),
+        props: true, //
+        children: [{
+            path: 'emails/:id?',
+            component: UserEmailsSubscriptions
+        }, {
+            path: 'profile/:id?',
+            components: {
+                default: UserProfile,
+                helper: UserProfilePreview
+            }
+        }]
     }]
 })
