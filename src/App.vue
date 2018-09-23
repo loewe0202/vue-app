@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <div class="flex-row-center fixed-bottom tabBar">
-            <router-link v-for="item in tabBar" :to="item.path" :key="this" tag="div">{{item.text}}</router-link>
+            <router-link v-for="(item,index) in tabBar" :to="item.path" :key="index" tag="div">{{item.text}}</router-link>
         </div>
         <transition :name="transitionName" mode="out-in">
             <router-view class="page"></router-view>
@@ -9,37 +9,40 @@
     </div>
 </template>
 <script>
-import "./assets/css/common.css";
+import "@/assets/css/typo.css";
+import "@/assets/css/common.css";
 export default {
     name: "App",
     data() {
         return {
-            transitionName: 'slide-left',
+            transitionName: "slide-left",
             tabBar: [{
-                path: "/index",
-                text: '首页'
-            }, {
-                path: "/search",
-                text: '发现'
-            }, {
-                path: "/settings",
-                text: '我的'
-            }]
-        }
+                    path: "/index",
+                    text: "首页"
+                },
+                {
+                    path: "/search",
+                    text: "发现"
+                },
+                {
+                    path: "/settings",
+                    text: "我的"
+                }
+            ]
+        };
     },
-    // dynamically set transition based on route change
     watch: {
-        '$route' (to, from) {
-            const toDepth = to.path.split('/').length
-            const fromDepth = from.path.split('/').length
-            this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+        $route(to, from) {
+            const toDepth = to.path.split("/").length;
+            const fromDepth = from.path.split("/").length;
+            this.transitionName = toDepth < fromDepth ? "slide-right" : "slide-left";
         }
     }
 };
 
 </script>
-<style scoped lang="less">
-@rem: 1/75rem;
+<style scoped lang="scss">
+@import "@/assets/css/common.scss";
 #app {
     font-family: "Avenir", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -47,13 +50,22 @@ export default {
 }
 
 .router-link-active {
-    color: #0FE9F0;
+    color: #0fe9f0;
 }
 
 .tabBar {
-    height: 88*@rem;
+    height: rem(88);
+    font-size: 17px;
     background: #fff;
     justify-content: space-around;
+}
+
+$i: 6;
+@while $i>0 {
+    .item-#{$i} {
+        width: 2em * $i;
+        $i: $i - 2;
+    }
 }
 
 </style>

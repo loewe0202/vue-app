@@ -7,6 +7,8 @@ import UserSettings from "@/components/userSettings"
 import UserEmailsSubscriptions from "@/views/userEmailsSubscriptions"
 import UserProfile from "@/views/userProfile"
 import UserProfilePreview from "@/views/userProfilePreview"
+import form from "@/components/form"
+import lottery from "@/components/lottery"
 
 Vue.use(Router)
 
@@ -45,5 +47,11 @@ export default new Router({
                 helper: UserProfilePreview
             }
         }]
+    }, {
+        path: '/form',
+        component: form
+    }, {
+        path: '/lottery',
+        component: lottery
     }]
 })

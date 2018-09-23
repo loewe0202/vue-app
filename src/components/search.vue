@@ -5,10 +5,12 @@
 </template>
 <script>
 import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
-export default {};
-
+export default {
+  data() {
+    return {};
+  },
+  mounted() {}
+};
 </script>
 <style scoped>
-
-
 </style>
