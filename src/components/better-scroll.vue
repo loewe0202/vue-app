@@ -1,9 +1,11 @@
 <template>
-  <div class="wrapper" ref="wrapper">
-    <ul class="content">
-      <li class="list-item" v-for="(item,index) in data" :key="index">{{item.cparagraph}}</li>
-    </ul>
-  </div>
+	<div class="container">
+		<div class="wrapper" ref="wrapper">
+   			<ul class="content">
+      			<li class="list-item" v-for="(item,index) in data" :key="index">{{item.cparagraph}}</li>
+    		</ul>
+  		</div>
+	</div>
 </template>
 <script>
   import BScroll from 'better-scroll'
@@ -25,22 +27,26 @@
 </script>
 <style scoped lang="scss">
 @import "@/assets/css/common.scss";
-.content {
-	padding: 15px;
+.container {
+	padding: 15px 0;
 	background: #fff;
+	height: rem(300);
 }
-
-.list-item {
-  font-size: 17px;
-}
-
 .wrapper {
 	position: absolute;
 	margin: auto;
 	overflow: hidden;
 	height: rem(300);
+	width: 100%;
 	max-width: 750px;
 	min-width: 320px;
+}
+.content {
+	padding: 0 15px;
+}
+
+.list-item {
+  font-size: 17px;
 }
 
 </style>
