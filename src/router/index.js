@@ -9,6 +9,7 @@ import UserProfile from "@/views/userProfile"
 import UserProfilePreview from "@/views/userProfilePreview"
 import form from "@/components/form"
 import lottery from "@/components/lottery"
+import betterScroll from "@/components/better-scroll"
 
 Vue.use(Router)
 
@@ -53,5 +54,8 @@ export default new Router({
     }, {
         path: '/lottery',
         component: lottery
+    },{
+        path:'/better-scroll',
+        component: betterScroll
     }]
 })

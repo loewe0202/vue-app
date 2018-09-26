@@ -60,12 +60,8 @@ export default {
     justify-content: space-around;
 }
 
-$i: 6;
-@while $i>0 {
-    .item-#{$i} {
-        width: 2em * $i;
-        $i: $i - 2;
-    }
+.page {
+    padding-bottom: rem(88);
 }
 
 </style>

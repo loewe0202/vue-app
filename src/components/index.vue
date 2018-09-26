@@ -18,6 +18,10 @@ export default {
         {
           path: "/lottery",
           title: "大转盘"
+        },
+        {
+          path: "/better-scroll",
+          title: "better-scroll"
         }
       ]
     };
