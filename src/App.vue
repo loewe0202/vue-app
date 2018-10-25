@@ -10,7 +10,7 @@
 </template>
 <script>
 import "@/assets/css/typo.css";
-import "@/assets/css/common.css";
+import "@/assets/css/common.scss";
 export default {
     name: "App",
     data() {
@@ -42,26 +42,25 @@ export default {
 
 </script>
 <style scoped lang="scss">
-@import "@/assets/css/common.scss";
+@import '@/assets/css/common.scss';
 #app {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .router-link-active {
-    color: #0fe9f0;
+  color: #0fe9f0;
 }
 
 .tabBar {
-    height: rem(88);
-    font-size: 17px;
-    background: #fff;
-    justify-content: space-around;
+  height: rem(88);
+  font-size: 17px;
+  background: #fff;
+  justify-content: space-around;
 }
 
 .page {
-    padding-bottom: rem(88);
+  padding-bottom: rem(88);
 }
-
 </style>
