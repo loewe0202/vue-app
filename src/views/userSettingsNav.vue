@@ -4,6 +4,4 @@
         <router-link to="/settings/profile">profile</router-link>
     </div>
 </template>
-<script></script>
-<style>
-</style>
+
