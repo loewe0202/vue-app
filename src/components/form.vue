@@ -1,5 +1,6 @@
 <template>
     <div style="padding: 15px;">
+        <better-scroll></better-scroll>
         <div>
             <span v-once>这里的值永远不会改变：{{ msg }}</span>
             <div style="margin: 10px;">

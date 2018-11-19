@@ -1,5 +1,6 @@
 <template>
     <div class="list-content">
+        <better-scroll></better-scroll>
         <router-link class="list-item" tag="div" exact v-for="(item,index) in list" :key="index" :to="item.path">
             {{item.title}}
         </router-link>
