@@ -10,7 +10,7 @@
     </div>
 </template>
 <script>
-import "@/assets/css/userSettings"; // 导入css样式
+import "@/assets/css/userSettings.scss"; // 导入css样式
 import userSettingsNav from "@/views/userSettingsNav";
 
 export default {

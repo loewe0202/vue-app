@@ -1,6 +1,5 @@
 <template>
     <div style="padding: 15px;">
-        <better-scroll></better-scroll>
         <div>
             <span v-once>这里的值永远不会改变：{{ msg }}</span>
             <div style="margin: 10px;">
@@ -86,7 +85,8 @@ export default {
   },
   methods: {
     changeUserName(e) {
-      console.log(e.target.value);
+      console.log(e.target.value)
+      this.userName = e.target.value
     },
     onSubmit() {
       console.log("提交");

@@ -37,7 +37,7 @@ export default new Router({
         // props: (route) => ({ // 将参数q以query传递给组件
         //     query: route.query.q
         // }),
-        props: true, //
+        props: true,
         children: [{
             path: 'emails/:id?',
             component: UserEmailsSubscriptions
@@ -54,8 +54,8 @@ export default new Router({
     }, {
         path: '/lottery',
         component: lottery
-    },{
-        path:'/better-scroll',
+    }, {
+        path: '/better-scroll',
         component: betterScroll
     }]
 })

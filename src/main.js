@@ -10,8 +10,9 @@ import axios from 'axios';
 import VueAxios from 'vue-axios';
 import store from './store';
 
-import betterScroll from './components/better-scroll'
-Vue.component('better-scroll', betterScroll); //初始化组件
+// import betterScroll from './components/better-scroll'
+// Vue.component('better-scroll', betterScroll); //初始化全局组件
+
 
 Vue.config.productionTip = false;
 

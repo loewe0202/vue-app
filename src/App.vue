@@ -9,40 +9,40 @@
     </div>
 </template>
 <script>
-import "@/assets/css/typo.css";
+import 'normalize.css';
 import "@/assets/css/common.scss";
 export default {
-    name: "App",
-    data() {
-        return {
-            transitionName: "slide-left",
-            tabBar: [{
-                    path: "/index",
-                    text: "首页"
-                },
-                {
-                    path: "/search",
-                    text: "发现"
-                },
-                {
-                    path: "/settings",
-                    text: "我的"
-                }
-            ]
-        };
-    },
-    watch: {
-        $route(to, from) {
-            const toDepth = to.path.split("/").length;
-            const fromDepth = from.path.split("/").length;
-            this.transitionName = toDepth < fromDepth ? "slide-right" : "slide-left";
+  name: "App",
+  data() {
+    return {
+      transitionName: "slide-left",
+      tabBar: [{
+          path: "/index",
+          text: "首页"
+        },
+        {
+          path: "/search",
+          text: "发现"
+        },
+        {
+          path: "/settings",
+          text: "我的"
         }
+      ]
+    };
+  },
+  watch: {
+    $route(to, from) {
+      const toDepth = to.path.split("/").length;
+      const fromDepth = from.path.split("/").length;
+      this.transitionName = toDepth < fromDepth ? "slide-right" : "slide-left";
     }
+  }
 };
-
 </script>
 <style scoped lang="scss">
 @import '@/assets/css/common.scss';
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
